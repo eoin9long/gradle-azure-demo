@@ -7,8 +7,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
+    @Test
+    void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+
+    @Test
+    void greetingContainsHelloWorld() {
+        App classUnderTest = new App();
+        assertTrue(classUnderTest.getGreeting().contains("Hello World!"), "greeting should contain 'Hello World!'");
+    }
+
+    @Test
+    void reverseGreetingTest() {
+        App classUnderTest = new App();
+        assertEquals(".DDT ot emocleW !dlroW olleH", classUnderTest.getReverseGreeting(),
+                "reverse greeting should be '.DDT ot emocleW !dlroW olleH'");
     }
 }
